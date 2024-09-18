@@ -26,13 +26,20 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 ;
-  background-size: cover;
+  background: #040404 url("../img/jo-sense-fons2.png") top right no-repeat;
+  background-size:contain;
   left: 0;
   right: 0;
   top: 0;
   height: 100vh;
   z-index: 0;
+}
+/* Media query para pantallas de 870px o menos */
+@media (max-width: 870px) {
+  body::before {
+    background-image: none;  /* Elimina solo la imagen de fondo */
+    background-color: #040404;  /* Ocultar la imagen en pantallas de 870px o menos */
+  }
 }
 
 @media (min-width: 1024px) {
@@ -71,6 +78,7 @@ h6 {
   align-items: center;
   z-index: 997;
   overflow-y: auto;
+  position: relative;
 }
 
 #header * {
@@ -154,31 +162,24 @@ h6 {
   }
 }
 /* edicio imatge */
-.header-img {
-  max-width: 100%;
-  height: auto;
-  
-  display: block;
-  margin: 0 auto;
+
+
+/* @media (min-width: 992px) {
+  .header-img {
+    max-width: 90%; /* Set image size */
+ /* Ensure the image is displayed */
+ /* }
 }
 
+
+/* For scres smaller than 992px, the image will be hidden */
+/*
 @media (max-width: 992px) {
   .header-img {
-    max-width: 60%; /* Reduce image size for smaller screens */
-  }
-}
+    display: none;     /* Hide the image on smaller screens */
+ /* }
+} */
 
-@media (max-width: 768px) {
-  .header-img {
-    max-width: 40%; /* Further reduce for smaller screens */
-  }
-}
-
-@media (max-width: 576px) {
-  .header-img {
-    background-color: #040404; /* Even smaller for mobile screens */
-  }
-}
 
 /* Header Top */
 #header.header-top {
@@ -227,6 +228,7 @@ h6 {
 */
 .navbar {
   padding: 0;
+  z-index: 998;
   margin-top: 35px;
 }
 
