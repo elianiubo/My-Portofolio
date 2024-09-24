@@ -26,27 +26,23 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/jo-sense-fons2.png") top right no-repeat;
-  background-size:contain;
+  background: #0B0B0B url("../img/me2.png") right no-repeat;
+  background-size: contain;
   left: 0;
   right: 0;
   top: 0;
   height: 100vh;
   z-index: 0;
-}
-/* Media query para pantallas de 870px o menos */
-@media (max-width: 870px) {
+} 
+ /*Media query para pantallas de 870px o menos */
+@media (max-width: 992px) {
   body::before {
     background-image: none;  /* Elimina solo la imagen de fondo */
-    background-color: #040404;  /* Ocultar la imagen en pantallas de 870px o menos */
+    background-color: #0B0B0B;  /* Ocultar la imagen en pantallas de 870px o menos */
   }
 }
 
-@media (min-width: 1024px) {
-  body::before {
-    background-attachment: fixed;
-  }
-}
+
 
 a {
   color: #05DFD7;
@@ -78,7 +74,7 @@ h6 {
   align-items: center;
   z-index: 997;
   overflow-y: auto;
-  position: relative;
+
 }
 
 #header * {
@@ -124,7 +120,7 @@ h6 {
 }
 
 #header .social-links a {
-  font-size: 16px;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,8 +129,8 @@ h6 {
   line-height: 1;
   margin-right: 8px;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 #header .social-links a:hover {
@@ -433,7 +429,14 @@ section .container {
   font-family: "Poppins", sans-serif;
   color: #fff;
 }
+.section-title .info-works{
+  font-size: 13px;
+  color: #eeee;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1.5;
 
+}
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
@@ -472,7 +475,7 @@ section .container {
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
-.counts {
+/* .counts {
   padding: 70px 0 60px;
 }
 
@@ -509,7 +512,7 @@ section .container {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Skills
@@ -586,7 +589,7 @@ section .container {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #fff;
+  color: hsl(183, 95%, 92%);
 }
 
 .resume .resume-item {
@@ -608,11 +611,14 @@ section .container {
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: rgba(255, 255, 255, 0.15);
+  background: #05DFD7;
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+}
+.resume .resume-item b{
+  color:#909191;
 }
 
 .resume .resume-item ul {
@@ -638,11 +644,50 @@ section .container {
   background: #05DFD7;
   border: 2px solid #05DFD7;
 }
+.link-project,
+.link-project:focus {
+  display: inline-block;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #05DFD7; /* Color inicial del texto */
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out; /* Solo aplicar la transición en el color */
+  position: relative; /* Necesario para el pseudo-elemento */
+}
+
+/* Línea de fondo que siempre se ve un poco */
+.link-project:before {
+  content: "";
+  position: absolute;
+  width: 10px; /* Tamaño pequeño inicial */
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #e8e8e8; /* Color de la línea */
+  visibility: visible; /* La línea es visible de forma predeterminada */
+  transition: all 0.3s ease-in-out; /* Transición para el cambio de tamaño */
+}
+
+/* Mostrar la línea más grande al hacer hover o cuando está activa */
+.link-project:hover:before,
+.link-project:focus:before,
+.link-project.active:before {
+  width: 100%; /* Hacer que la línea ocupe el 100% del ancho del enlace */
+}
+
+/* Cambio de color del texto al hacer hover o cuando está activo */
+.link-project:hover,
+.link-project.active,
+.link-project:focus {
+  color: #05DFD7; /* Cambia el color del texto a blanco al hacer hover */
+}
 
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+/* .services .icon-box {
   text-align: center;
   background: rgba(204, 204, 204, 0.1);
   padding: 80px 20px;
@@ -717,7 +762,7 @@ section .container {
 .services .icon-box:hover h4 a,
 .services .icon-box:hover p {
   color: #fff;
-}
+} */
 
 
 /*--------------------------------------------------------------
@@ -795,7 +840,7 @@ section .container {
 /*--------------------------------------------------------------
 # Credits
 --------------------------------------------------------------*/
-.credits {
+/* .credits {
   position: fixed;
   right: 0;
   left: 0;
@@ -823,15 +868,15 @@ section .container {
 
 .credits a:hover {
   color: #05DFD7;
-}
+} */
 
 
 
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
-/*
-.testimonials .testimonials-carousel,
+
+/* .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
 }
@@ -907,15 +952,15 @@ section .container {
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #05DFD7;
-}
+} */
 
 
-*/
+
 /*Portofolio secrtion*/
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
-/*
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
@@ -1069,12 +1114,12 @@ section .container {
 .portfolio .portfolio-wrap:hover .portfolio-info::after {
   bottom: 15px;
   right: 15px;
-}*/
+}
 
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
-/*.portfolio-details {
+.portfolio-details {
   padding-top: 40px;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
@@ -1142,4 +1187,4 @@ section .container {
 .portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #05DFD7;
 }
-*/
+
