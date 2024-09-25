@@ -278,3 +278,11 @@ $(".change").click(function () {
     i = 0
   }
 });
+$('#navbar ul li a').on('click', function(e) {
+  e.preventDefault(); // prevents default scrolling
+  var target = this.hash; // grabs the #id of the clicked link
+  if (target) {
+    var y = $(target).offset().top; // gets the offset position of the target
+    $('html, body').animate({scrollTop: y}, 600); // animate the scroll
+  }
+});
